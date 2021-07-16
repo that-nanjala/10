@@ -58,4 +58,15 @@ print(df_data['Avg RTT'].value_counts()[:n].index.tolist())
 n = 10
 print(df_data['Avg TP'].value_counts()[:n].index.tolist())
 
+# Finding distributions
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+sns.pairplot(data = df_data, x_vars = ['Avg TP','Avg Tcp Retrans'], y_vars = ['Handset Type'], height = 15)
+
+# K means clustering
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3) 
+kmeans.fit(df_data)
