@@ -37,8 +37,7 @@ df_clean['Last Location Name'] = df_clean['Last Location Name'].fillna(df_clean[
 print(df_clean.describe())
 
 # selecting features of interest
-df_agg = df_clean[['IMSI', 'Dur. (ms)', 'Social Media DL (Bytes)','Social Media UL (Bytes)', 'Google DL (Bytes)', 'Google UL (Bytes)', 'Email DL (Bytes)', 'Email UL (Bytes)', 'Youtube DL (Bytes)', 'Youtube UL (Bytes)', 'Netflix DL (Bytes)', 'Netflix UL (Bytes)', 'Gaming DL (Bytes)', 
-                'Gaming UL (Bytes)', 'Other DL (Bytes)', 'Other UL (Bytes)', 'Total UL (Bytes)', 'Total DL (Bytes)']].groupby(['IMSI']).sum()
+df_agg = df_clean[['MSISDN/Number', 'Dur. (ms)', 'Bearer Id', 'Total UL (Bytes)', 'Total DL (Bytes)']].groupby(['MSISDN/Number']).sum()
 df_agg.head()
 
 
