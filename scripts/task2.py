@@ -15,6 +15,7 @@ df_clean = db.drop(['HTTP DL (Bytes)', 'HTTP UL (Bytes)', 'Nb of sec with 125000
 # dropping rows for columns with Unidue identifiers for customer data since we cannot fill missing values with existing data
 df_clean.dropna(subset = ['MSISDN/Number'], inplace=True)
 df_clean.dropna(subset = ['Bearer Id'], inplace=True)
+df_clean.dropna(subset = ['IMSI'], inplace=True)
 
 ## dropping rows for columns with Unidue identifiers for customer data since we cannot fill missing values with existing data
 df_clean.dropna(subset = ['MSISDN/Number'], inplace=True)
